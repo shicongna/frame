@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/bootstrap.css">
+</head>
+<body ng-app="app">
+	
+	<div ng-controller="myctrl">
+		<form ng-submit="sub()">
+			<input type="text" ng-model="stu.name" placeholder="姓名">
+			<input type="text" ng-model="stu.age" placeholder="年龄">
+			<input type="text" ng-model="stu.sex" placeholder="性别">
+			<input type="text" ng-model="stu.achievement" placeholder="成绩">
+			<input type="submit" value="添加">
+		</form>
+			<table class="table table-bordered table-hover">
+			<thead>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>成绩</th>
+				<th>删除</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in students">
+					<td>{{student.name}}</td>
+					<td>{{student.age}}</td>
+					<td>{{student.sex}}</td>
+					<td>{{student.achievement}}</td>
+					<td><button ng-click="del()">删除</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.controller("myctrl",function($scope){
+			function clone(obj){
+				var newObj = {};
+				for(var i in obj){
+					newObj[i] = obj[i];
+				}
+				return newObj;
+			}
+
+
+			$scope.sub = function(){
+				this.students.push(clone(this.stu));
+			}
+
+			$scope.del = function(){
+				console.log(this.student);
+			}
+			
+			$scope.students = [
+				{
+					name:"xiaoming",
+					age:12,
+					sex:"男",
+					achievement:150
+				}
+			] 
+		})
+	</script>
+</body>
+</html>

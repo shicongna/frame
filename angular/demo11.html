@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="app">
+	
+	<div ng-controller="myctrl">
+		<form ng-submit="sub()">
+			<input type="text" ng-model="text">
+			<input type="submit" value="添加">
+		</form>
+	</div>
+
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.controller("myctrl",function($scope){
+			$scope.sub = function(){
+				alert(this.text)
+			}
+		})
+	</script>
+</body>
+</html>

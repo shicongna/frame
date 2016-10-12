@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="app">
+	
+	<div ng-controller="myctrl">
+		<form ng-submit="sub()">
+			<input type="text" ng-model="stu.name" placeholder="姓名">
+			<input type="text" ng-model="stu.age" placeholder="年龄">
+			<input type="text" ng-model="stu.sex" placeholder="性别">
+			<input type="text" ng-model="stu.achievement" placeholder="成绩">
+			<input type="submit" value="添加">
+		</form>
+		<ul>
+			<li ng-repeat="fruit in fruits">{{fruit}}</li>
+		</ul>
+	</div>
+
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.controller("myctrl",function($scope){
+			$scope.sub = function(){
+				console.log(this.stu);
+			}
+			$scope.students = [{},{}] 
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+	{
+		"name":"美国队长",
+		"age":100,
+		"sex":"male",
+		"achievement":30
+	},
+	{
+		"name":"绿巨人",
+		"age":10,
+		"sex":"male",
+		"achievement":60
+	},
+	{
+		"name":"黑寡妇",
+		"age":50,
+		"sex":"male",
+		"achievement":90
+	},
+	{
+		"name":"钢铁侠",
+		"age":80,
+		"sex":"male",
+		"achievement":99
+	},
+	{
+		"name":"雷神",
+		"age":10000,
+		"sex":"male",
+		"achievement":80
+	}
+]

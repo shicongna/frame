@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body ng-app="app">
+
+	<hello></hello>
+	<hello></hello>
+	<hello></hello>
+	<hello></hello>
+	<hello></hello>
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.directive("hello",function(){
+			return {
+				scope:{},
+				replace:true,
+				restrict:"E",
+				templateUrl:"template/count.html",
+				controller:function($scope){
+					$scope.number = 0;
+					$scope.add = function(){
+						++this.number;
+					}
+					$scope.sub = function(){
+						--this.number;
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

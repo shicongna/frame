@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/bootstrap.css">
+</head>
+<body ng-app="app">
+	
+	<table ng-controller="myctrl" class="table table-bordered table-hover">
+		<thead>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>成绩</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="student in students">
+				<td>{{student.name}}</td>
+				<td>{{student.age}}</td>
+				<td>{{student.sex}}</td>
+				<td>{{student.achievement}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.controller("myctrl",function($scope){
+			$scope.students = [
+								{
+									"name":"美国队长",
+									"age":100,
+									"sex":"male",
+									"achievement":30
+								},
+								{
+									"name":"绿巨人",
+									"age":10,
+									"sex":"male",
+									"achievement":60
+								},
+								{
+									"name":"黑寡妇",
+									"age":50,
+									"sex":"male",
+									"achievement":90
+								},
+								{
+									"name":"钢铁侠",
+									"age":80,
+									"sex":"male",
+									"achievement":99
+								},
+								{
+									"name":"雷神",
+									"age":10000,
+									"sex":"male",
+									"achievement":80
+								}
+							]
+		})
+	</script>
+</body>
+</html>

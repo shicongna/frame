@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="app">
+	
+	<div ng-controller="myctrl">
+		<h1>{{abc}}</h1>
+	</div>
+
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.controller("myctrl",function($scope){
+			$scope.abc = "hello angular";
+		})
+	</script>
+</body>
+</html>

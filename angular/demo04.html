@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="app">
+	
+	<ul ng-controller="myctrl">
+		<li ng-repeat="student in students">{{student}}</li>
+	</ul>
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.controller("myctrl",function($scope){
+			$scope.students = ["美国队长","黑寡妇","钢铁侠","绿巨人","雷神"];
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body ng-app="app">
+
+	<hello></hello>
+
+	<script src="script/angular.js"></script>
+	<script>
+		var myapp = angular.module("app",[]);
+		myapp.directive("hello",function(){
+			return {
+				replace:true,
+				restrict:"E",
+				templateUrl:"template/fruitlist.html",
+				controller:function($scope){
+					$scope.fruits = ["香蕉","苹果","鸭梨"];
+				}
+			}
+		})
+	</script>
+</body>
+</html>
